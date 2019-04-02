@@ -21,17 +21,17 @@ npm test
       secret: 'dafd1ae95b8bb22617a05fcc022f65c53adf6ef26ece15ab69374538533033a6'
     }
     ```
-* #### createPublicKey(secret`<String>`) Use secret got public key
+* #### createPublicKey(secret`<String>`) Create pubkey by kofo secret
     ```js
     Utils.createPublicKey(kofo.secret);
     ```
 
-* #### createKofoIdBySecret(secret`<String>`) Use secret got kofoId
+* #### createKofoIdBySecret(secret`<String>`) Create kofoId by kofo secret
     ```js
     Utils.createKofoIdBySecret(kofo.secret);
     ```
 
-* #### createKofoIdByPubKey(publicKey`<String>`) Use publicKey got kofoId
+* #### createKofoIdByPubKey(publicKey`<String>`) Create kofoId by kofo pubkey
     ```js
     Utils.createKofoIdByPubKey(kofo.pubkey);
     ```
@@ -48,8 +48,35 @@ npm test
     Utils.verifyWithKofoId(kofo.kofoId, signed, 'Hello world!')
     ```
 
-* #### verifyWithPubKey(pubkey`<String>`, signature`<String>`, data`<any>`) 使用公钥验证签名
+* #### verifyWithPubKey(pubkey`<String>`, signature`<String>`, data`<any>`)  Verify signature with kofo pubkey
     ```js
     //Verify signature with public key
     Utils.verifyWithPubKey(kofo.pubkey, signed, 'Hello world!');
+    ```
+
+* #### sha256(data`<any>`) Sha256 encryption
+    ```js
+    Utils.sha256('message')
+    ```
+* #### sha256Twice(data`<any>`) Sha256 twice encryption
+    ```js
+    Utils.sha256Twice('message')
+    ```
+* #### createPreImage() Generate random string of length 124
+    ```js
+    Utils.createPreImage()
+    ```
+* #### createHValue() Sha256 twice encryption preImage create hValue
+    ```js
+    const preImage = Utils.createPreImage();
+    Utils.createHValue(preImage)
+    ```
+* #### encrypt(data`<any>`, secret`<String>`) Encrypts a message.
+    ```js
+    Utils.encrypt('data','pwd')
+    ```
+* #### decrypt(data`<any>`, secret`<String>`) Decrypts serialized ciphertext.
+    ```js
+    const encryptedData = Utils.encrypt('data','pwd')
+    Utils.decrypt(encryptedData,'pwd')
     ```

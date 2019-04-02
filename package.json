@@ -1,0 +1,36 @@
+{
+  "name": "kofo-utils",
+  "version": "1.0.0",
+  "description": "Kofo utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drunken005/kofo-utils.git"
+  },
+  "keywords": [
+    "Kofo",
+    "util",
+    "eckey"
+  ],
+  "author": "drunken",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drunken005/kofo-utils/issues"
+  },
+  "homepage": "https://github.com/drunken005/kofo-utils#readme",
+  "dependencies": {
+    "bs58": "^4.0.1",
+    "create-hash": "^1.2.0",
+    "crypto-js": "^3.1.9-1",
+    "eckey-util": "^1.0.4",
+    "randombytes": "^2.1.0"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^6.0.2",
+    "should": "^13.2.3"
+  }
+}
